@@ -33,7 +33,15 @@
 </p> 
 
 <p align="center">
-    👋 Join us 💬 <a href="https://github.com/01-ai/Yi/issues/43#issuecomment-1827285245" target="_blank"> WeChat (Chinese) </a>!
+    👩‍🚀 Ask questions or discuss ideas on <a href="https://github.com/01-ai/Yi/discussions" target="_blank"> GitHub </a>!
+</p> 
+
+<p align="center">
+    👋 Join us on 💬 <a href="https://github.com/01-ai/Yi/issues/43#issuecomment-1827285245" target="_blank"> WeChat (Chinese) </a>!
+</p> 
+
+<p align="center">
+    📚 Grow at <a href="https://github.com/01-ai/Yi/blob/main/docs/learning_hub.md"> Yi Learning Hub </a>!
 </p> 
 
 
@@ -46,6 +54,10 @@
 
 - [🟢 What is Yi?](#-what-is-yi)
   - [📌 Introduction](#-introduction)
+  - [🎯 Models](#-models)
+    - [Chat models](#chat-models)
+    - [Base models](#base-models)
+    - [Other info](#other-info)
   - [🎉 News](#-news)
 - [🟢 Why Yi?](#-why-yi)
   - [🌎 Ecosystem](#-ecosystem)
@@ -61,28 +73,23 @@
     - [⛔️ Limitations of chat model](#️-limitations-of-chat-model)
 - [🟢 Who can use Yi?](#-who-can-use-yi)
 - [🟢 How to use Yi?](#-how-to-use-yi)
-    - [1. Prepare development environment](#1-prepare-development-environment)
-      - [1.1 Docker](#11-docker)
-      - [1.2 Local development environment](#12-local-development-environment)
-    - [2. Download the model (optional)](#2-download-the-model-optional)
-    - [3. Examples](#3-examples)
-      - [3.1 Use the chat model](#31-use-the-chat-model)
-      - [3.2 Use the base model](#32-use-the-base-model)
-      - [3.3 Finetune from the base model](#33-finetune-from-the-base-model)
-      - [3.4 Quantization](#34-quantization)
-        - [GPT-Q](#gpt-q)
-        - [AWQ](#awq)
+  - [Quick start](#quick-start)
+  - [Deployment](https://github.com/01-ai/Yi/blob/main/docs/deployment.md)
+  - [Learning hub](https://github.com/01-ai/Yi/blob/main/docs/learning_hub.md)
 - [🟢 Misc.](#-misc)
-    - [📡 Disclaimer](#-disclaimer)
-    - [🪪 License](#-license)
+  - [Ackknowledgements](#acknowledgments)
+  - [📡 Disclaimer](#-disclaimer)
+  - [🪪 License](#-license)
 
 </details>
+
+<hr>
 
 # 🟢 What is Yi?
 
 ## 📌 Introduction 
 
-- 🤖 The Yi series models are the next generation of open source large language models trained from strach by [01.AI](https://01.ai/).
+- 🤖 The Yi series models are the next generation of open source large language models trained from scratch by [01.AI](https://01.ai/).
 
 - 🙌 Targeted as a bilingual language model and trained on 3T multilingual corpus, the Yi series models become one of the strongest LLM worldwide, showing promise in language understanding, commonsense reasoning, reading comprehension, and more. For example,
 
@@ -90,7 +97,51 @@
   
   - For Chinese language capability, the Yi series models landed in 2nd place (following GPT4), surpassing other LLMs (such as Baidu ERNIE, Qwen, and Baichuan) on the [SuperCLUE](https://www.superclueai.com/) in Oct 2023.
 
-- 🙏 (Credits to LLaMA) Thanks to the Transformer and LLaMA open-source communities, as they reducing the efforts required to build from scratch and enabling the utilization of the same tools within the AI ecosystem. If you're interested in Yi's adoption of LLaMA architecture and license usage policy, see [Yi's relation with LLaMA](./docs/yi_relation_llama.md).
+- 🙏 (Credits to LLaMA) Thanks to the Transformer and LLaMA open-source communities, as they reducing the efforts required to build from scratch and enabling the utilization of the same tools within the AI ecosystem. If you're interested in Yi's adoption of LLaMA architecture and license usage policy, see [Yi's relation with LLaMA](https://github.com/01-ai/Yi/blob/main/docs/yi_relation_llama.md).
+
+<div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
+
+## 🎯 Models
+
+Yi models come in multiple sizes and cater to different use cases. You can also fine-tune Yi models to meet your specific requirements. 
+
+### Chat models
+
+| Model | Download  
+|---|---
+Yi-6B-Chat| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B-Chat) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B-Chat/summary)
+Yi-6B-Chat-4bits |	• [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B-Chat-4bits)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B-Chat-4bits/summary)
+Yi-6B-Chat-8bits	|  • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B-Chat-8bits) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B-Chat-8bits/summary)
+Yi-34B-Chat	| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B-Chat)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B-Chat/summary)
+Yi-34B-Chat-4bits	| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B-Chat-4bits)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B-Chat-4bits/summary)
+Yi-34B-Chat-8bits | • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B-Chat-8bits) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B-Chat-8bits/summary)
+
+<sub><sup> - 4-bit series models are quantized by AWQ. <br> - 8-bit series models are quantized by GPTQ <br> - All quantized models have a low barrier to use since they can be deployed on consumer-grade GPUs (e.g., 3090, 4090).</sup></sub>
+
+### Base models
+
+| Model | Download | 
+|---|---|
+Yi-6B| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B/summary)
+Yi-6B-200K	| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B-200K) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B-200K/summary)
+Yi-34B| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B/summary)
+Yi-34B-200K|• [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B-200K)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B-200K/summary)
+
+<sub><sup> - 200k is roughly equivalent to 400,000 Chinese characters.  </sup></sub>
+
+### Other info
+
+For chat models and base models:
+
+- 6B series models are suitable for personal and academic use.
+
+- 34B series models suitable for personal, academic, and commercial (particularly for small and medium-sized enterprises) purposes. It's a cost-effective solution that's affordable and equipped with emergent ability.
+
+- The **default context window** is **4k tokens**.
+  
+- The pretrained tokens are 3T.
+  
+- The training data are up to June 2023.	
 
 <div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
 
@@ -99,7 +150,7 @@
 <details>
 <summary>🎯 <b>2023/11/23</b>: The chat models are open to public.</summary>
 
-This release contains two chat models based on previous released base models, two 8-bits models quantized by GPTQ, two 4-bits models quantized by AWQ.
+This release contains two chat models based on previously released base models, two 8-bit models quantized by GPTQ, and two 4-bit models quantized by AWQ.
 
 - `Yi-34B-Chat`
 - `Yi-34B-Chat-4bits`
@@ -131,7 +182,7 @@ Application form:
 <details>
 <summary>🎯 <b>2023/11/05</b>: The base model of <code>Yi-6B-200K</code> and <code>Yi-34B-200K</code>.</summary>
 
-This release contains two base models with the same parameter sizes of previous
+This release contains two base models with the same parameter sizes as the previous
 release, except that the context window is extended to 200K.
 
 </details>
@@ -159,6 +210,7 @@ Yi has a comprehensive ecosystem, offering a range of tools, services, and model
   - [🔗 Serving](#-serving)
   - [⚙️ Quantitation](#️-quantitation)
   - [🛠️ Fine-tuning](#️-fine-tuning)
+  - [API](#api)
 
 ### 💦 Upstream
 
@@ -186,7 +238,7 @@ model = AutoModelForCausalLM.from_pretrained("01-ai/Yi-34b", device_map="auto")
 
 If you want to get up with Yi in a few minutes, you can use the following services built upon Yi.
 
-- [Yi-34B-Chat](https://platform.lingyiwanwu.com/) (Yi official beta): you can chat with it. **Note** that currently it's available through a whitelist. Welcome to apply and experience it firsthand!
+- [Yi-34B-Chat](https://platform.lingyiwanwu.com/) (Yi official beta): you can chat with it. **Note** that currently it's available through a whitelist. Welcome to apply (fill out a form in [English](https://cn.mikecrm.com/l91ODJf) or [Chinese](https://cn.mikecrm.com/gnEZjiQ)) and experience it firsthand!
   
 - [Yi-6B-Chat (Replicate)](https://replicate.com/01-ai): you can use this model with more options by setting additional parameters and calling APIs.
   
@@ -219,8 +271,12 @@ If you're seeking to explore the diverse capabilities within Yi's thriving famil
   
 - [NousResearch/Nous-Capybara-34B](https://huggingface.co/NousResearch/Nous-Capybara-34B): this model is trained with 200K context length and 3 epochs on the Capybara dataset. 
 
-<div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
+#### API
 
+- [amazing-openai-api](https://github.com/soulteary/amazing-openai-api): this tool converts Yi model APIs into the OpenAI API format out of the box.
+- [LlamaEdge](https://www.secondstate.io/articles/yi-34b/#create-an-openai-compatible-api-service-for-the-yi-34b-chat-model): this tool builds an OpenAI-compatible API server for Yi-34B-Chat using a portable Wasm (WebAssembly) file, powered by Rust.
+
+<div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
 
 ## 📌 Benchmarks 
 
@@ -328,11 +384,19 @@ Everyone! 🙌 ✅
 
 - The Yi series models are free for personal usage, academic purposes, and commercial use. All usage must adhere to the [Yi Series Models Community License Agreement 2.1](https://github.com/01-ai/Yi/blob/main/MODEL_LICENSE_AGREEMENT.txt)
   
-- For free commercial use, you only need to [complete this form](https://www.lingyiwanwu.com/yi-license) to get Yi Model Commercial License.
+- For free commercial use, you only need to [complete this form](https://www.lingyiwanwu.com/yi-license) to get a Yi Model Commercial License.
 
 <div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
 
 # 🟢 How to use Yi?
+
+- [Quick start](#quick-start)
+  
+- [Deployment](https://github.com/01-ai/Yi/blob/main/docs/deployment.md)
+  
+- [Learning hub](https://github.com/01-ai/Yi/blob/main/docs/learning_hub.md)
+
+## Quick start
 
 [1. Prepare development environment](#1-prepare-development-environment)
 <br>[2. Download the model](#2-download-the-model-optional)
@@ -522,6 +586,48 @@ For more detailed explanation, please read the [doc](https://github.com/01-ai/Yi
 <div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
 
 # 🟢 Misc.
+
+### Acknowledgments
+
+A heartfelt thank you to each of you who have made contributions to the Yi community! You have helped Yi not just a project, but a vibrant, growing home for innovation.
+
+<!---
+ref https://github.com/ngryman/contributor-faces
+npx contributor-faces --exclude "*bot*" --limit 70 --repo "https://github.com/01-ai/Yi"
+
+change the height and width for each of the contributors from 80 to 50 at index.js.
+--->
+
+[//]: contributor-faces
+<a href="https://github.com/ZhaoFancy"><img src="https://avatars.githubusercontent.com/u/139539780?v=4" title="ZhaoFancy" width="50" height="50"></a>
+<a href="https://github.com/Anonymitaet"><img src="https://avatars.githubusercontent.com/u/50226895?v=4" title="Anonymitaet" width="50" height="50"></a>
+<a href="https://github.com/findmyway"><img src="https://avatars.githubusercontent.com/u/5612003?v=4" title="findmyway" width="50" height="50"></a>
+<a href="https://github.com/shiyue-loop"><img src="https://avatars.githubusercontent.com/u/150643331?v=4" title="shiyue-loop" width="50" height="50"></a>
+<a href="https://github.com/richardllin"><img src="https://avatars.githubusercontent.com/u/1932744?v=4" title="richardllin" width="50" height="50"></a>
+<a href="https://github.com/jiangchengSilent"><img src="https://avatars.githubusercontent.com/u/143983063?v=4" title="jiangchengSilent" width="50" height="50"></a>
+<a href="https://github.com/loofahcus"><img src="https://avatars.githubusercontent.com/u/15729967?v=4" title="loofahcus" width="50" height="50"></a>
+<a href="https://github.com/Yimi81"><img src="https://avatars.githubusercontent.com/u/66633207?v=4" title="Yimi81" width="50" height="50"></a>
+<a href="https://github.com/kai01ai"><img src="https://avatars.githubusercontent.com/u/140378742?v=4" title="kai01ai" width="50" height="50"></a>
+<a href="https://github.com/WayTooWill"><img src="https://avatars.githubusercontent.com/u/119883899?v=4" title="WayTooWill" width="50" height="50"></a>
+<a href="https://github.com/ly-nld"><img src="https://avatars.githubusercontent.com/u/38471793?v=4" title="ly-nld" width="50" height="50"></a>
+<a href="https://github.com/0x1111"><img src="https://avatars.githubusercontent.com/u/750392?v=4" title="0x1111" width="50" height="50"></a>
+<a href="https://github.com/forpanyang"><img src="https://avatars.githubusercontent.com/u/138085590?v=4" title="forpanyang" width="50" height="50"></a>
+<a href="https://github.com/Gmgge"><img src="https://avatars.githubusercontent.com/u/48548141?v=4" title="Gmgge" width="50" height="50"></a>
+<a href="https://github.com/eltociear"><img src="https://avatars.githubusercontent.com/u/22633385?v=4" title="eltociear" width="50" height="50"></a>
+<a href="https://github.com/alabulei1"><img src="https://avatars.githubusercontent.com/u/45785633?v=4" title="alabulei1" width="50" height="50"></a>
+<a href="https://github.com/cArlIcon"><img src="https://avatars.githubusercontent.com/u/7384654?v=4" title="cArlIcon" width="50" height="50"></a>
+<a href="https://github.com/fecet"><img src="https://avatars.githubusercontent.com/u/41792945?v=4" title="fecet" width="50" height="50"></a>
+<a href="https://github.com/markli404"><img src="https://avatars.githubusercontent.com/u/116385770?v=4" title="markli404" width="50" height="50"></a>
+<a href="https://github.com/renxiaoyi"><img src="https://avatars.githubusercontent.com/u/10918916?v=4" title="renxiaoyi" width="50" height="50"></a>
+<a href="https://github.com/statelesshz"><img src="https://avatars.githubusercontent.com/u/28150734?v=4" title="statelesshz" width="50" height="50"></a>
+<a href="https://github.com/tdolan21"><img src="https://avatars.githubusercontent.com/u/40906019?v=4" title="tdolan21" width="50" height="50"></a>
+<a href="https://github.com/tpoisonooo"><img src="https://avatars.githubusercontent.com/u/7872421?v=4" title="tpoisonooo" width="50" height="50"></a>
+<a href="https://github.com/xffxff"><img src="https://avatars.githubusercontent.com/u/30254428?v=4" title="xffxff" width="50" height="50"></a>
+<a href="https://github.com/angeligareta"><img src="https://avatars.githubusercontent.com/u/32129522?v=4" title="angeligareta" width="50" height="50"></a>
+
+[//]: contributor-faces
+
+<div align="right"> [ <a href="#building-the-next-generation-of-open-source-and-bilingual-llms">Back to top ⬆️ </a> ] </div>
 
 ### 📡 Disclaimer
 
