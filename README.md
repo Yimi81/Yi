@@ -40,17 +40,20 @@
 </p> 
 
 <p align="center">
-    👩‍🚀 Ask questions or discuss ideas on <a href="https://github.com/01-ai/Yi/discussions" target="_blank"> GitHub </a>!
+    👩‍🚀 Ask questions or discuss ideas on <a href="https://github.com/01-ai/Yi/discussions" target="_blank"> GitHub </a>
 </p> 
 
 <p align="center">
-    👋 Join us on 💬 <a href="https://github.com/01-ai/Yi/issues/43#issuecomment-1827285245" target="_blank"> WeChat (Chinese) </a>!
+    👋 Join us on <a href="https://discord.gg/zQ4A6b6H" target="_blank"> 👾 Discord </a> or <a href="https://github.com/01-ai/Yi/issues/43#issuecomment-1827285245" target="_blank"> 💬 WeChat </a>
 </p> 
 
 <p align="center">
-    📚 Grow at <a href="#learning-hub"> Yi Learning Hub </a>!
+    📝 Check out  <a href="https://arxiv.org/abs/2403.04652"> Yi Tech Report </a>
 </p> 
 
+<p align="center">
+    📚 Grow at <a href="#learning-hub"> Yi Learning Hub </a>
+</p> 
 
 <!-- DO NOT REMOVE ME -->
 
@@ -59,14 +62,14 @@
 <details open>
 <summary></b>📕 Table of Contents</b></summary>
 
-- [🟢 What is Yi?](#-what-is-yi)
-  - [📌 Introduction](#-introduction)
-  - [🎯 Models](#-models)
+- [What is Yi?](#what-is-yi)
+  - [Introduction](#introduction)
+  - [Models](#models)
     - [Chat models](#chat-models)
     - [Base models](#base-models)
     - [Other info](#other-info)
-  - [🎉 News](#-news)
-- [🟢 How to use Yi?](#-how-to-use-yi)
+  - [News](#news)
+- [How to use Yi?](#how-to-use-yi)
   - [Quick start](#quick-start)
     - [Choose your path](#choose-your-path)
     - [pip](#quick-start---pip)
@@ -78,30 +81,32 @@
   - [Quantization](#quantization)
   - [Deployment](#deployment)
   - [Learning hub](#learning-hub)
-- [🟢 Why Yi?](#-why-yi)
-  - [🌎 Ecosystem](#-ecosystem)
-    - [💦 Upstream](#-upstream)
-    - [🌊 Downstream](#-downstream)
-      - [🔗 Serving](#-serving)
-      - [⚙️ Quantitation](#️-quantitation)
-      - [🛠️ Fine-tuning](#️-fine-tuning)
+- [Why Yi?](#why-yi)
+  - [Ecosystem](#ecosystem)
+    - [Upstream](#upstream)
+    - [Downstream](#downstream)
+      - [Serving](#serving)
+      - [Quantization](#quantization-1)
+      - [Fine-tuning](#fine-tuning-1)
       - [API](#api)
-  - [📌 Benchmarks](#-benchmarks)
-    - [📊 Base model performance](#-base-model-performance)
-    - [📊 Chat model performance](#-chat-model-performance)
-- [🟢 Who can use Yi?](#-who-can-use-yi)
-- [🟢 Misc.](#-misc)
+  - [Benchmarks](#benchmarks)
+    - [Base model performance](#base-model-performance)
+    - [Chat model performance](#chat-model-performance)
+  - [Tech report](#tech-report)
+    - [Citation](#citation)
+- [Who can use Yi?](#who-can-use-yi)
+- [Misc.](#misc)
   - [Acknowledgements](#acknowledgments)
-  - [📡 Disclaimer](#-disclaimer)
-  - [🪪 License](#-license)
+  - [Disclaimer](#disclaimer)
+  - [License](#license)
 
 </details>
 
 <hr>
 
-# 🟢 What is Yi?
+# What is Yi?
 
-## 📌 Introduction 
+## Introduction 
 
 - 🤖 The Yi series models are the next generation of open-source large language models trained from scratch by [01.AI](https://01.ai/).
 
@@ -119,7 +124,7 @@
 > 
 > The Yi series models adopt the same model architecture as Llama but are **NOT** derivatives of Llama.
 
-- Both Yi and Llama are all based on the Transformer structure, which has been the standard architecture for large language models since 2018.
+- Both Yi and Llama are based on the Transformer structure, which has been the standard architecture for large language models since 2018.
 
 - Grounded in the Transformer architecture, Llama has become a new cornerstone for the majority of state-of-the-art open-source models due to its excellent stability, reliable convergence, and robust compatibility. This positions Llama as the recognized foundational framework for models including Yi.
 
@@ -137,23 +142,34 @@
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-## 🎉 News 
+## News 
 
 <details open>
-  <summary>🎯 <b>2024/03/06</b>: The Yi-9B is open-sourced and available to the public.</summary>
+  <summary>🎯 <b>2024-03-08</b>: <a href="https://arxiv.org/abs/2403.04652">Yi Tech Report</a> is published! </summary>
+</details>
+
+
+<details open>
+  <summary>🔔 <b>2024-03-07</b>: The long text capability of the Yi-34B-200K has been enhanced. </summary>
   <br>
-  Yi-9B stands out as the top performer among a range of similar-sized open-source models (including Mistral-7B, SOLAR-10.7B, Gemma-7B, DeepSeek-Coder-7B-Base-v1.5 and more), particularly excelling in code, math, common-sense reasoning, and reading comprehension.
+In the "Needle-in-a-Haystack" test, the Yi-34B-200K's performance is improved by 10.5%, rising from 89.3% to an impressive 99.8%. We continue to pre-train the model on 5B tokens long-context data mixture and demonstrate a near-all-green performance.
 </details>
 
 <details open>
-  <summary>🎯 <b>2024/01/23</b>: The Yi-VL models, <code><a href="https://huggingface.co/01-ai/Yi-VL-34B">Yi-VL-34B</a></code> and <code><a href="https://huggingface.co/01-ai/Yi-VL-6B">Yi-VL-6B</a></code>, are open-sourced and available to the public.</summary>
+  <summary>🎯 <b>2024-03-06</b>: The <code>Yi-9B</code> is open-sourced and available to the public.</summary>
+  <br>
+<code>Yi-9B</code> stands out as the top performer among a range of similar-sized open-source models (including Mistral-7B, SOLAR-10.7B, Gemma-7B, DeepSeek-Coder-7B-Base-v1.5 and more), particularly excelling in code, math, common-sense reasoning, and reading comprehension.
+</details>
+
+<details open>
+  <summary>🎯 <b>2024-01-23</b>: The Yi-VL models, <code><a href="https://huggingface.co/01-ai/Yi-VL-34B">Yi-VL-34B</a></code> and <code><a href="https://huggingface.co/01-ai/Yi-VL-6B">Yi-VL-6B</a></code>, are open-sourced and available to the public.</summary>
   <br>
   <code><a href="https://huggingface.co/01-ai/Yi-VL-34B">Yi-VL-34B</a></code> has ranked <strong>first</strong> among all existing open-source models in the latest benchmarks, including <a href="https://arxiv.org/abs/2311.16502">MMMU</a> and <a href="https://arxiv.org/abs/2401.11944">CMMMU</a> (based on data available up to January 2024).</li>
 </details>
 
 
 <details>
-<summary>🎯 <b>2023/11/23</b>: <a href="#chat-models">Chat models</a> are open-sourced and available to the public.</summary>
+<summary>🎯 <b>2023-11-23</b>: <a href="#chat-models">Chat models</a> are open-sourced and available to the public.</summary>
 <br>This release contains two chat models based on previously released base models, two 8-bit models quantized by GPTQ, and two 4-bit models quantized by AWQ.
 
 - `Yi-34B-Chat`
@@ -170,11 +186,11 @@ You can try some of them interactively at:
 </details>
 
 <details>
-  <summary>🔔 <b>2023/11/23</b>: The Yi Series Models Community License Agreement is updated to <a href="https://github.com/01-ai/Yi/blob/main/MODEL_LICENSE_AGREEMENT.txt">v2.1</a>.</summary>
+  <summary>🔔 <b>2023-11-23</b>: The Yi Series Models Community License Agreement is updated to <a href="https://github.com/01-ai/Yi/blob/main/MODEL_LICENSE_AGREEMENT.txt">v2.1</a>.</summary>
 </details>
 
 <details> 
-<summary>🔥 <b>2023/11/08</b>: Invited test of Yi-34B chat model.</summary>
+<summary>🔥 <b>2023-11-08</b>: Invited test of Yi-34B chat model.</summary>
 <br>Application form:
 
 - [English](https://cn.mikecrm.com/l91ODJf)
@@ -182,13 +198,13 @@ You can try some of them interactively at:
 </details>
 
 <details>
-<summary>🎯 <b>2023/11/05</b>: <a href="#base-models">The base models, </a><code>Yi-6B-200K</code> and <code>Yi-34B-200K</code>, are open-sourced and available to the public.</summary>
+<summary>🎯 <b>2023-11-05</b>: <a href="#base-models">The base models, </a><code>Yi-6B-200K</code> and <code>Yi-34B-200K</code>, are open-sourced and available to the public.</summary>
 <br>This release contains two base models with the same parameter sizes as the previous
 release, except that the context window is extended to 200K.
 </details>
 
 <details>
-<summary>🎯 <b>2023/11/02</b>: <a href="#base-models">The base models, </a><code>Yi-6B</code> and <code>Yi-34B</code>, are open-sourced and available to the public.</summary>
+<summary>🎯 <b>2023-11-02</b>: <a href="#base-models">The base models, </a><code>Yi-6B</code> and <code>Yi-34B</code>, are open-sourced and available to the public.</summary>
 <br>The first public release contains two bilingual (English/Chinese) base models
 with the parameter sizes of 6B and 34B.  Both of them are trained with 4K
 sequence length and can be extended to 32K during inference time.
@@ -199,7 +215,7 @@ sequence length and can be extended to 32K during inference time.
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-## 🎯 Models
+## Models
 
 Yi models come in multiple sizes and cater to different use cases. You can also fine-tune Yi models to meet your specific requirements. 
 
@@ -225,11 +241,11 @@ Yi-6B-Chat-8bits	|  • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B-C
 |---|---|
 Yi-34B| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B/summary)
 Yi-34B-200K|• [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-34B-200K)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-34B-200K/summary)
-Yi-9B|• [🤗 Hugging Face](TBD)  
+Yi-9B|• [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-9B)
 Yi-6B| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B)  • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B/summary)
 Yi-6B-200K	| • [🤗 Hugging Face](https://huggingface.co/01-ai/Yi-6B-200K) • [🤖 ModelScope](https://www.modelscope.cn/models/01ai/Yi-6B-200K/summary)
 
-<sub><sup> - 200k is roughly equivalent to 400,000 Chinese characters.  </sup></sub>
+<sub><sup> - 200k is roughly equivalent to 400,000 Chinese characters.  <br> - If you want to use the previous version of the Yi-34B-200K (released on Nov 5, 2023), run `git checkout 069cd341d60f4ce4b07ec394e82b79e94f656cf` to download the weight. </sup></sub>
 
 ### Model info
 
@@ -260,7 +276,7 @@ Model | Intro | Default context window | Pretrained tokens | Training Data Date
 </p>
 
 
-# 🟢 How to use Yi?
+# How to use Yi?
 
 - [Quick start](#quick-start)
   - [Choose your path](#choose-your-path)
@@ -269,7 +285,7 @@ Model | Intro | Default context window | Pretrained tokens | Training Data Date
   - [conda-lock](#quick-start---conda-lock)
   - [llama.cpp](#quick-start---llamacpp)
   - [Web demo](#web-demo)
-- [Fine-tuning](#finetuning)
+- [Fine-tuning](#fine-tuning)
 - [Quantization](#quantization)
 - [Deployment](#deployment)
 - [Learning hub](#learning-hub)
@@ -289,7 +305,7 @@ Select one of the following paths to begin your journey with Yi!
 If you prefer to deploy Yi models locally, 
 
   - 🙋‍♀️ and you have **sufficient** resources (for example, NVIDIA A800 80GB), you can choose one of the following methods:
-    - [pip](#pip)
+    - [pip](#quick-start---pip)
     - [Docker](#quick-start---docker)
     - [conda-lock](#quick-start---conda-lock)
 
@@ -926,13 +942,13 @@ Before deploying Yi in your environment, make sure your hardware meets the follo
 ##### Chat models
 
 | Model                | Minimum VRAM |        Recommended GPU Example       |
-|----------------------|--------------|:-------------------------------------:|
-| Yi-6B-Chat           | 15 GB         | RTX 3090 <br> RTX 4090 <br>  A10 <br> A30             |
-| Yi-6B-Chat-4bits     | 4 GB          | RTX 3060 <br>  RTX 4060                     |
-| Yi-6B-Chat-8bits     | 8 GB          | RTX 3070 <br> RTX 4060                     |
-| Yi-34B-Chat          | 72 GB         | 4 x RTX 4090 <br> A800 (80GB)               |
-| Yi-34B-Chat-4bits    | 20 GB         | RTX 3090  <br> RTX 4090 <br> A10 <br> A30 <br> A100 (40GB) |
-| Yi-34B-Chat-8bits    | 38 GB         | 2 x RTX 3090  <br> 2 x RTX 4090 <br> A800  (40GB) |
+|:----------------------|:--------------|:-------------------------------------:|
+| Yi-6B-Chat           | 15 GB         | 1 x RTX 3090 (24 GB) <br> 1 x RTX 4090 (24 GB) <br>  1 x A10 (24 GB)  <br> 1 x A30 (24 GB)              |
+| Yi-6B-Chat-4bits     | 4 GB          | 1 x RTX 3060 (12 GB)<br> 1 x RTX 4060 (8 GB)                   |
+| Yi-6B-Chat-8bits     | 8 GB          | 1 x RTX 3070 (8 GB) <br> 1 x RTX 4060 (8 GB)                   |
+| Yi-34B-Chat          | 72 GB         | 4 x RTX 4090 (24 GB)<br> 1 x A800 (80GB)               |
+| Yi-34B-Chat-4bits    | 20 GB         | 1 x RTX 3090 (24 GB) <br> 1 x RTX 4090 (24 GB) <br> 1 x A10 (24 GB)  <br> 1 x A30 (24 GB)  <br> 1 x A100 (40 GB) |
+| Yi-34B-Chat-8bits    | 38 GB         | 2 x RTX 3090 (24 GB) <br> 2 x RTX 4090 (24 GB)<br> 1 x A800  (40 GB) |
 
 Below are detailed minimum VRAM requirements under different batch use cases.
 
@@ -949,10 +965,10 @@ Below are detailed minimum VRAM requirements under different batch use cases.
 
 | Model                | Minimum VRAM |        Recommended GPU Example       |
 |----------------------|--------------|:-------------------------------------:|
-| Yi-6B                | 15 GB         | RTX3090 <br> RTX4090 <br> A10 <br> A30               |
-| Yi-6B-200K           | 50 GB         | A800 (80 GB)                            |
+| Yi-6B                | 15 GB         | 1 x RTX 3090 (24 GB) <br> 1 x RTX 4090 (24 GB) <br> 1 x A10 (24 GB)  <br> 1 x A30 (24 GB)                |
+| Yi-6B-200K           | 50 GB         | 1 x A800 (80 GB)                            |
 | Yi-9B                | 20 GB         | 1 x RTX 4090 (24 GB)                           |
-| Yi-34B               | 72 GB         | 4 x RTX 4090 <br> A800 (80 GB)               |
+| Yi-34B               | 72 GB         | 4 x RTX 4090 (24 GB) <br> 1 x A800 (80 GB)               |
 | Yi-34B-200K          | 200 GB        | 4 x A800 (80 GB)                        |
 
 <p align="right"> [
@@ -1000,31 +1016,33 @@ With all these resources at your fingertips, you're ready to start your exciting
 </details>
 
 
-# 🟢 Why Yi? 
+# Why Yi? 
 
-  - [🌎 Ecosystem](#-ecosystem)
-    - [💦 Upstream](#-upstream)
-    - [🌊 Downstream](#-downstream)
-      - [🔗 Serving](#-serving)
-      - [⚙️ Quantitation](#️-quantitation)
-      - [🛠️ Fine-tuning](#️-fine-tuning)
+  - [Ecosystem](#ecosystem)
+    - [Upstream](#upstream)
+    - [Downstream](#downstream)
+      - [Serving](#serving)
+      - [Quantization](#quantization-1)
+      - [Fine-tuning](#fine-tuning-1)
       - [API](#api)
-  - [📌 Benchmarks](#-benchmarks)
-    - [📊 Chat model performance](#-chat-model-performance)
-    - [📊 Base model performance](#-base-model-performance)
+  - [Benchmarks](#benchmarks)
+    - [Chat model performance](#chat-model-performance)
+    - [Base model performance](#base-model-performance)
+      - [Yi-34B and Yi-34B-200K](#yi-34b-and-yi-34b-200k)
+      - [Yi-9B](#yi-9b)
  
-## 🌎 Ecosystem
+## Ecosystem
 
 Yi has a comprehensive ecosystem, offering a range of tools, services, and models to enrich your experiences and maximize productivity.
 
-- [💦 Upstream](#-upstream)
-- [🌊 Downstream](#-downstream)
-  - [🔗 Serving](#-serving)
-  - [⚙️ Quantitation](#️-quantitation)
-  - [🛠️ Fine-tuning](#️-fine-tuning)
+- [Upstream](#upstream)
+- [Downstream](#downstream)
+  - [Serving](#serving)
+  - [Quantization](#quantization-1)
+  - [Fine-tuning](#fine-tuning-1)
   - [API](#api)
 
-### 💦 Upstream
+### Upstream
 
 The Yi series models follow the same model architecture as Llama. By choosing Yi, you can leverage existing tools, libraries, and resources within the Llama ecosystem, eliminating the need to create new tools and enhancing development efficiency.
 
@@ -1042,7 +1060,7 @@ model = AutoModelForCausalLM.from_pretrained("01-ai/Yi-34b", device_map="auto")
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-### 🌊 Downstream
+### Downstream
 
 > 💡 Tip
 > 
@@ -1050,7 +1068,7 @@ model = AutoModelForCausalLM.from_pretrained("01-ai/Yi-34b", device_map="auto")
 >
 > - To help others quickly understand your work, it is recommended to use the format of `<model-name>: <model-intro> + <model-highlights>`.
 
-#### 🔗 Serving 
+#### Serving 
 
 If you want to get up with Yi in a few minutes, you can use the following services built upon Yi.
 
@@ -1062,7 +1080,7 @@ If you want to get up with Yi in a few minutes, you can use the following servic
   
 - [ScaleLLM](https://github.com/vectorch-ai/ScaleLLM#supported-models): you can use this service to run Yi models locally with added flexibility and customization.
   
-#### ⚙️ Quantitation
+#### Quantization
 
 If you have limited computational capabilities, you can use Yi's quantized models as follows. 
 
@@ -1072,7 +1090,7 @@ These quantized models have reduced precision but offer increased efficiency, su
 - [TheBloke/Yi-34B-GGUF](https://huggingface.co/TheBloke/Yi-34B-GGUF)
 - [TheBloke/Yi-34B-AWQ](https://huggingface.co/TheBloke/Yi-34B-AWQ)
   
-#### 🛠️ Fine-tuning
+#### Fine-tuning
 
 If you're seeking to explore the diverse capabilities within Yi's thriving family, you can delve into Yi's fine-tuned models as below.
 
@@ -1098,12 +1116,29 @@ If you're seeking to explore the diverse capabilities within Yi's thriving famil
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-## 📌 Benchmarks 
+## Tech report
 
-- [📊 Chat model performance](#-chat-model-performance)
-- [📊 Base model performance](#-base-model-performance)
+For detailed capabilities of the Yi series model, see [Yi: Open Foundation Models by 01.AI](https://arxiv.org/abs/2403.04652).
 
-### 📊 Chat model performance
+### Citation
+
+```
+@misc{ai2024yi,
+    title={Yi: Open Foundation Models by 01.AI},
+    author={01. AI and : and Alex Young and Bei Chen and Chao Li and Chengen Huang and Ge Zhang and Guanwei Zhang and Heng Li and Jiangcheng Zhu and Jianqun Chen and Jing Chang and Kaidong Yu and Peng Liu and Qiang Liu and Shawn Yue and Senbin Yang and Shiming Yang and Tao Yu and Wen Xie and Wenhao Huang and Xiaohui Hu and Xiaoyi Ren and Xinyao Niu and Pengcheng Nie and Yuchi Xu and Yudong Liu and Yue Wang and Yuxuan Cai and Zhenyu Gu and Zhiyuan Liu and Zonghong Dai},
+    year={2024},
+    eprint={2403.04652},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+```
+
+## Benchmarks 
+
+- [Chat model performance](#-chat-model-performance)
+- [Base model performance](#-base-model-performance)
+
+### Chat model performance
 
 Yi-34B-Chat model demonstrates exceptional performance, ranking first among all existing open-source models in the benchmarks including MMLU, CMMLU, BBH, GSM8k, and more.
 
@@ -1120,7 +1155,7 @@ Yi-34B-Chat model demonstrates exceptional performance, ranking first among all 
 <strong>*</strong>: C-Eval results are evaluated on the validation datasets
 </details>
 
-### 📊 Base model performance
+### Base model performance
 
 #### Yi-34B and Yi-34B-200K 
 
@@ -1144,29 +1179,29 @@ The Yi-34B and Yi-34B-200K models stand out as the top performers among open-sou
 
 Yi-9B is almost the best among a range of similar-sized open-source models (including Mistral-7B, SOLAR-10.7B, Gemma-7B, DeepSeek-Coder-7B-Base-v1.5 and more), particularly excelling in code, math, common-sense reasoning, and reading comprehension.
 
-![Yi-9B benchmark - details](TBD)
+![Yi-9B benchmark - details](https://github.com/01-ai/Yi/blob/main/assets/img/Yi-9B_benchmark_details.png?raw=true)
 
-- In terms of **overall** ability (`Mean-All), Yi-9B performs the best among similarly sized open-source models, surpassing DeepSeek-Coder, DeepSeek-Math, Mistral-7B, SOLAR-10.7B, and Gemma-7B.
+- In terms of **overall** ability (Mean-All), Yi-9B performs the best among similarly sized open-source models, surpassing DeepSeek-Coder, DeepSeek-Math, Mistral-7B, SOLAR-10.7B, and Gemma-7B.
 
-![Yi-9B benchmark - overall](TBD)
+![Yi-9B benchmark - overall](https://github.com/01-ai/Yi/blob/main/assets/img/Yi-9B_benchmark_overall.png?raw=true)
 
 - In terms of **coding** ability (Mean-Code), Yi-9B's performance is second only to DeepSeek-Coder-7B, surpassing Yi-34B, SOLAR-10.7B, Mistral-7B, and Gemma-7B.
 
-![Yi-9B benchmark - code](TBD)
+![Yi-9B benchmark - code](https://github.com/01-ai/Yi/blob/main/assets/img/Yi-9B_benchmark_code.png?raw=true)
 
 - In terms of **math** ability (Mean-Math), Yi-9B's performance is second only to DeepSeek-Math-7B, surpassing SOLAR-10.7B, Mistral-7B, and Gemma-7B.
 
-![Yi-9B benchmark - math](TBD)
+![Yi-9B benchmark - math](https://github.com/01-ai/Yi/blob/main/assets/img/Yi-9B_benchmark_math.png?raw=true)
 
 - In terms of **common sense and reasoning** ability (Mean-Text), Yi-9B's performance is on par with Mistral-7B, SOLAR-10.7B, and Gemma-7B.
 
-![Yi-9B benchmark - text](TBD)
+![Yi-9B benchmark - text](https://github.com/01-ai/Yi/blob/main/assets/img/Yi-9B_benchmark_text.png?raw=true)
 
 <p align="right"> [
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-# 🟢 Who can use Yi?
+# Who can use Yi?
 
 Everyone! 🙌 ✅
 
@@ -1178,7 +1213,7 @@ Everyone! 🙌 ✅
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-# 🟢 Misc.
+# Misc.
 
 ### Acknowledgments
 
@@ -1190,7 +1225,7 @@ A heartfelt thank you to each of you who have made contributions to the Yi commu
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-### 📡 Disclaimer
+### Disclaimer
 
 We use data compliance checking algorithms during the training process, to
 ensure the compliance of the trained model to the best of our ability. Due to
@@ -1205,7 +1240,7 @@ as well as any associated data security concerns.
   <a href="#top">Back to top ⬆️ </a>  ] 
 </p>
 
-### 🪪 License
+### License
 
 The source code in this repo is licensed under the [Apache 2.0
 license](https://github.com/01-ai/Yi/blob/main/LICENSE). The Yi series models are fully open for academic research and free for commercial use, with automatic permission granted upon application. All usage must adhere to the [Yi Series Models Community License Agreement 2.1](https://github.com/01-ai/Yi/blob/main/MODEL_LICENSE_AGREEMENT.txt).
